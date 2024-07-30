@@ -1,25 +1,10 @@
 import React, { useState } from "react";
+import Input from "./Input";
 
-const Inputs = () => {
-  const [information, setInformation] = useState({
-    name: "name",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInformation((prevInfo) => ({
-      ...prevInfo,
-      [name]: value,
-    }));
-  };
+const Inputs = ({ setState, state, attributes }) => {
   return (
     <div className="left">
-      <input
-        name="name"
-        type="text"
-        value={information.name}
-        onChange={handleChange}
-      />
+      <Input setState={setState} state={state} />
     </div>
   );
 };
