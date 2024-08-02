@@ -5,24 +5,24 @@ import Display from "./components/Display";
 
 function App() {
   const attributes = [
-    { name: "first name", value: "john" },
-    { name: "last name", value: "doe" },
-    { name: "email", value: "john@john.com" },
-    { name: "phone", value: "+263772001002" },
-    { name: "school name", value: "HRE Poly" },
-    { name: "program", value: "IT" },
-    { name: "company name", value: "InfoSec" },
-    { name: "position", value: "software developer" },
+    { name: "first name", cartegory: "basic info" },
+    { name: "last name", cartegory: "basic info" },
+    { name: "email", cartegory: "basic info" },
+    { name: "phone", cartegory: "basic info" },
+    { name: "school name", cartegory: "educational" },
+    { name: "program", cartegory: "educational" },
+    { name: "company name", cartegory: "practical" },
+    { name: "position", cartegory: "practical" },
   ];
 
   const [info, setInfo] = useState({
-    firstname: "",
-    lastname: "",
+    ["first name"]: "",
+    ["last name"]: "",
     email: "",
     phone: "",
-    schoolname: "",
+    ["school name"]: "",
     program: "",
-    companyname: "",
+    ["company name"]: "",
     position: "",
   });
 
