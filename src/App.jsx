@@ -5,21 +5,30 @@ import Display from "./components/Display";
 
 function App() {
   const attributes = [
-    { name: "firstname", value: "john", type: "text" },
-    { name: "lastname", value: "doe", type: "text" },
-    { name: "email", value: "john@john.com", type: "text" },
-    { name: "phone", value: "+263772001002", type: "text" },
-    { name: "schoolname", value: "HRE Poly", type: "text" },
-    { name: "program", value: "IT", type: "text" },
-    { name: "companyname", value: "InfoSec", type: "text" },
-    { name: "position", value: "software developer", type: "text" },
+    { name: "first name", value: "john" },
+    { name: "last name", value: "doe" },
+    { name: "email", value: "john@john.com" },
+    { name: "phone", value: "+263772001002" },
+    { name: "school name", value: "HRE Poly" },
+    { name: "program", value: "IT" },
+    { name: "company name", value: "InfoSec" },
+    { name: "position", value: "software developer" },
   ];
 
-  const [name, setName] = useState("nelson");
+  const [info, setInfo] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    schoolname: "",
+    program: "",
+    companyname: "",
+    position: "",
+  });
 
   return (
     <div className="container">
-      <Inputs attributes={attributes} setState={setName} state={name} />
+      <Inputs attributes={attributes} setState={setInfo} state={info} />
       <Display attributes={attributes} />
     </div>
   );

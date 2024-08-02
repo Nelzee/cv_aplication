@@ -4,7 +4,16 @@ import Input from "./Input";
 const Inputs = ({ setState, state, attributes }) => {
   return (
     <div className="left">
-      <Input setState={setState} state={state} />
+      <div>
+        {attributes.map((attribute) => {
+          return (
+            <div>
+              <label htmlFor={attribute.name}>{attribute.name}</label>
+              <Input attribute={attribute} setState={setState} state={state} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
