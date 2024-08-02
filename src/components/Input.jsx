@@ -1,10 +1,12 @@
 import React from "react";
 
-const Input = ({ setState, attribute }) => {
+const Input = ({ setState, attribute, state }) => {
   const handleChange = (e) => {
-    console.log(e.target.name);
+    console.log(state);
     const { name, value } = e.target;
-    setState(e.target.value);
+    setState((info) => {
+      return { ...info, [name]: value };
+    });
   };
 
   return (
@@ -13,6 +15,7 @@ const Input = ({ setState, attribute }) => {
         name={attribute.name}
         type="text"
         onChange={(e) => handleChange(e)}
+        value={state?.attribute?.name}
       />
     </div>
   );
