@@ -1,8 +1,7 @@
 import React from "react";
 
-const Input = ({ setState, attribute, state }) => {
+const Input = ({ setState, attribute, state, display }) => {
   const handleChange = (e) => {
-    console.log(state);
     const { name, value } = e.target;
     setState((info) => {
       return { ...info, [name]: value };
@@ -15,7 +14,7 @@ const Input = ({ setState, attribute, state }) => {
         name={attribute.name}
         type="text"
         onChange={(e) => handleChange(e)}
-        value={state?.attribute?.name}
+        value={!display ? state?.[attribute?.name] : ""}
       />
     </div>
   );

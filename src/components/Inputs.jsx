@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import Input from "./Input";
 
-const Inputs = ({ setState, state, attributes }) => {
+const Inputs = ({ setState, state, attributes, display, setDisplay }) => {
+  const handleEdit = () => {
+    setDisplay(() => false);
+  };
+  const handleSubmit = () => {
+    setDisplay(() => true);
+  };
+
   return (
     <div className="left">
       <div>
@@ -16,6 +23,7 @@ const Inputs = ({ setState, state, attributes }) => {
                   attribute={attribute}
                   setState={setState}
                   state={state}
+                  display={display}
                 />
               </div>
             );
@@ -31,6 +39,7 @@ const Inputs = ({ setState, state, attributes }) => {
                   attribute={attribute}
                   setState={setState}
                   state={state}
+                  display={display}
                 />
               </div>
             );
@@ -46,12 +55,17 @@ const Inputs = ({ setState, state, attributes }) => {
                   attribute={attribute}
                   setState={setState}
                   state={state}
+                  display={display}
                 />
               </div>
             );
           })}
-        <button>Edit</button>
-        <button>Submit</button>
+        <button name="edit" onClick={handleEdit}>
+          Edit
+        </button>
+        <button name="submit" onClick={handleSubmit}>
+          Submit
+        </button>
       </div>
     </div>
   );

@@ -15,6 +15,8 @@ function App() {
     { name: "position", cartegory: "practical" },
   ];
 
+  const [display, setDisplay] = useState(false);
+
   const [info, setInfo] = useState({
     ["first name"]: "",
     ["last name"]: "",
@@ -28,8 +30,14 @@ function App() {
 
   return (
     <div className="container">
-      <Inputs attributes={attributes} setState={setInfo} state={info} />
-      <Display attributes={attributes} />
+      <Inputs
+        attributes={attributes}
+        setState={setInfo}
+        state={info}
+        display={display}
+        setDisplay={setDisplay}
+      />
+      <Display attributes={attributes} state={info} display={display} />
     </div>
   );
 }

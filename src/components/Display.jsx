@@ -1,6 +1,8 @@
 import React from "react";
 
-const Display = ({ attributes }) => {
+const Display = ({ attributes, display, state }) => {
+  console.log(display);
+
   return (
     <div className="right">
       <div>
@@ -8,6 +10,7 @@ const Display = ({ attributes }) => {
           return (
             <div key={index}>
               <h3>{attribute.name}</h3>
+              {display && <h4>{state?.[attribute?.name]}</h4>}
             </div>
           );
         })}
